@@ -25,6 +25,7 @@ func deposit(value int, wg *sync.WaitGroup) {
 func withdraw(value int, wg *sync.WaitGroup) {
 	if value > balance {
 		fmt.Println("Withdraw unsuccessful! Not sufficient balance")
+		return
 	}
 	mutex.Lock()
 	fmt.Printf("Withdrawing %d from account with balance: %d\n", value, balance)
